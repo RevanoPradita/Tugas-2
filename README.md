@@ -1,2 +1,34 @@
-# Tugas-2
-baris 3 : mendeklarasikan fungsi void bubbleSort dengan menerima inputan arr dan n yang bertipe integer. baris 4 : mendeklarasikan variable i dan j untuk perulangan dan tmp untuk variable penukaran sementara. baris 5-6 : melakukakan perulangan sebanyak n dan perulangan sebanyak nilai variable n dikurang i dan dikurang satu. baris 7-11 : cek kondisi jika nilai variable arr pada index ke j lebih besar dari nilai varible arr pada index ke j+1 maka melakukan penukaran nilai variable baris 17 : mendeklarasi variable array, n, i dan j bertipe integer. baris 18-19 : melakukan input nilai dari user untuk variable n yang digunakan sebagai jumlah data. baris 21-25 : melakukan input nilai dari user untuk variable array dari setiap data. baris 27 : memanggil fungsi bubbleSort dengan memasukkan variable array dan n. baris 29-33 : menampilkan hasil pengurutan bubbleSort.
+#include <stdio.h>
+
+void bubbleSort(int arr[], int n){
+  int i, j, tmp;
+  for(i = 0; i < n; i++){
+    for(j=0; j < n-i-1; j ++){
+      if(arr[j] > arr[j+1]){
+        tmp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = tmp;
+      }
+    }
+  }
+}
+
+int main() {
+  int array[100], n, i, j;
+  printf("Masukkan banyak elemen: ");
+  scanf("%d", &n);
+ 
+ printf("Masukkan nilai: \n");
+  
+  for(i = 0; i < n; i++){
+    scanf("%d", &array[i]);
+  }
+  
+  bubbleSort(array, n);
+  
+  printf("Hasil pengurutan sebagai berikut:\n");
+  for(i = 0; i < n; i++){
+    printf("%d ", array[i]);
+  }
+  printf("\n");
+}
